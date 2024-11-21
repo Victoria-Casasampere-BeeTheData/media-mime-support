@@ -55,6 +55,7 @@ window.onload = function() {
 	for(i in AUDIO_CODECS) {
 		var codec = AUDIO_CODECS[i].codec;
 		addMimeChecks(table, 'audio/mp4; codecs="'+codec+'"', AUDIO_CODECS[i].description);
+		addMimeChecks(table, 'audio/webm; codecs="'+codec+'"', AUDIO_CODECS[i].description);
 	}
 	addParagraph(results, "avc_codecs", "Checking support for AVC codecs with parameters");
 	table = createTableHeader(results);
@@ -63,10 +64,12 @@ window.onload = function() {
 	addParagraph(results, "av1_codecs", "Checking support for AV1 codecs with parameters");
 	table = createTableHeader(results);
 	addChecks(getAllAV1Codecs, addMimeChecks, table);
+	addChecksWebm(getAllAV1Codecs, addMimeChecks, table);
 
 	addParagraph(results, "other_video_codecs", "Checking support for other codecs such as VP9, HEVC");
 	table = createTableHeader(results);
 	addChecks(getAllVP9Codecs, addMimeChecks, table);
+	addChecksWebm(getAllVP9Codecs, addMimeChecks, table);
 	addChecks(getAllHEVCCodecs, addMimeChecks, table);
 };
 
@@ -82,3 +85,7 @@ function addChecks(getAllCodecs, add,table)
 	getAllCodecs().forEach(e => add(table, 'video/mp4; codecs="'+e.codec+'"', e.description));
 }
 
+function addChecksWebm(getAllCodecs, add,table)
+{
+	getAllCodecs().forEach(e => add(table, 'video/webm; codecs="'+e.codec+'"', e.description));
+}

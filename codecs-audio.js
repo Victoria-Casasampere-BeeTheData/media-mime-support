@@ -37,7 +37,13 @@ var AUDIO_CODECS = [
 	{ codec: "mp4a.68", 	description: "MPEG-2 AAC Scalable Sampling Rate Profile"},
 	{ codec: "mp4a.69", 	description: "MPEG-2 Audio Part 3"},
 	{ codec: "mp4a.6B", 	description: "MPEG-1 Part 3"},
+	{ codec: "mp4a.A7", 	description: "DRA"},
+	{ codec: "mp4a.A8", 	description: "ITU G.719"},
+	{ codec: "mp4a.AD", 	description: "Opus"},
+	{ codec: "mp4a.AF", 	description: "Auro-Cx 3D"},
 	{ codec: ".mp3", 	description: "MPEG-1/2 Part 3 - QuickTime File Format"},
 	{ codec: "mp3", 	description: "MPEG-1/2 Part 3 - QuickTime File Format"},
+	{ codec: "opus", 	description: "Opus"},
+	{ codec: "vorbis", 	description: "Vorbis"},
 ];
 
